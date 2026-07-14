@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>doc-page:not(:defined){visibility:hidden}</style>
+  <style>
+    body { margin: 0; }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.6in" style="background:#0a0e14;" hint-size="100%,100%">
+
+  <div style="background:#0a0e14; color:#eef2f7; font-family:'IBM Plex Sans', sans-serif;">
+
+    <!-- HERO -->
+    <div style="margin-bottom:36px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#8b96a5; margin-bottom:14px;">Riyadh, Saudi Arabia · Second Ring Road Project</div>
+      <h1 style="font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:38px; line-height:1.08; margin:0 0 10px; letter-spacing:-0.01em;">Ahmed Mohamed Hossam</h1>
+      <div style="font-family:'Space Grotesk', sans-serif; font-weight:500; font-size:16px; color:#8fe6df; margin:0 0 14px;">Lead Cost Control Engineer / MBA / Infrastructure Project Controls &amp; Power BI</div>
+      <p style="font-size:12.5px; line-height:1.6; color:#b7c0cc; margin:0 0 16px; break-inside:avoid;">Ten years across highways, ports and breakwaters, wastewater treatment plants and pump stations in Saudi Arabia and Egypt. Beyond running cost control, I build the reporting systems themselves — end-to-end Power BI platforms that track delivery on a daily cycle instead of a monthly close.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#eef2f7; background:#131b26; border:1px solid rgba(255,255,255,0.1); padding:6px 10px; border-radius:6px;">Ahmed.hossam.z2717@gmail.com</span>
+        <span style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#eef2f7; background:#131b26; border:1px solid rgba(255,255,255,0.1); padding:6px 10px; border-radius:6px;">+966 56 241 2083</span>
+        <span style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#eef2f7; background:#131b26; border:1px solid rgba(255,255,255,0.1); padding:6px 10px; border-radius:6px;">MBA · Managerial Accounting</span>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div style="margin-bottom:36px;">
+      <h2 style="font-family:'Space Grotesk', sans-serif; font-size:20px; font-weight:600; margin:0 0 4px; break-after:avoid;">Career timeline</h2>
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#5b6672; margin-bottom:16px;">2016 — Present</div>
+
+      <sc-for list="{{ timeline }}" as="role" hint-placeholder-count="6">
+        <div style="background:#101722; border:1px solid rgba(255,255,255,0.08); border-left:3px solid {{ role.dotColor }}; border-radius:10px; padding:14px 18px; margin-bottom:12px; break-inside:avoid;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+            <div>
+              <div style="font-family:'Space Grotesk', sans-serif; font-size:14.5px; font-weight:600; color:#eef2f7;">{{ role.title }}</div>
+              <div style="font-size:11px; color:#8b96a5; margin-top:2px;">{{ role.company }}</div>
+            </div>
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:#22d3ee; background:rgba(34,211,238,0.1); padding:4px 8px; border-radius:5px; white-space:nowrap;">{{ role.dates }}</span>
+          </div>
+          <ul style="margin:10px 0 0; padding-left:16px; color:#b7c0cc; font-size:11.5px; line-height:1.55;">
+            <sc-for list="{{ role.bullets }}" as="b" hint-placeholder-count="3">
+              <li>{{ b }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- POWER BI SYSTEM -->
+    <div style="margin-bottom:36px; break-before:page;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#22d3ee; margin-bottom:8px;">Selected capability</div>
+      <h2 style="font-family:'Space Grotesk', sans-serif; font-size:20px; font-weight:600; margin:0 0 10px; break-after:avoid;">The Daily Performance System</h2>
+      <p style="font-size:12px; line-height:1.6; color:#b7c0cc; margin:0 0 6px;">A self-refreshing Power BI platform consolidating BOQ, budget, commitments, actual cost from SAP/Oracle, progress, manpower and subcontractor data into one governed model — surfacing cost and schedule deviations within 24 hours instead of at month-end.</p>
+      <p style="font-family:'IBM Plex Mono', monospace; font-size:10px; color:#5b6672; margin:0 0 20px;">Screens below use illustrative sample data to demonstrate the system's structure.</p>
+
+      <!-- architecture flow -->
+      <div style="display:flex; align-items:center; flex-wrap:wrap; margin-bottom:24px; background:#0d131c; border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:16px; break-inside:avoid;">
+        <sc-for list="{{ flowSteps }}" as="step" hint-placeholder-count="4">
+          <div style="display:flex; align-items:center;">
+            <div style="background:#131b26; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; min-width:120px;">
+              <div style="font-family:'IBM Plex Mono', monospace; font-size:9px; color:{{ step.color }}; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:3px;">{{ step.tag }}</div>
+              <div style="font-size:11px; font-weight:500; color:#eef2f7;">{{ step.label }}</div>
+            </div>
+            <sc-if value="{{ step.hasArrow }}" hint-placeholder-val="{{ true }}">
+              <span style="color:#3a4552; font-size:16px; padding:0 10px;">→</span>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- KPI row -->
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-bottom:22px; break-inside:avoid;">
+        <sc-for list="{{ kpis }}" as="kpi" hint-placeholder-count="6">
+          <div style="background:#101722; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:12px 14px;">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:9px; color:#8b96a5; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:5px;">{{ kpi.label }}</div>
+            <div style="font-family:'Space Grotesk', sans-serif; font-size:19px; font-weight:600; color:{{ kpi.color }};">{{ kpi.value }}</div>
+            <div style="font-size:9.5px; color:#5b6672; margin-top:2px;">{{ kpi.sub }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1.4fr 1fr; gap:14px;">
+        <!-- s-curve -->
+        <div style="background:#101722; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; break-inside:avoid;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="font-size:11.5px; font-weight:600; color:#eef2f7;">Cumulative S-curve · Board</span>
+            <div style="display:flex; gap:10px; font-family:'IBM Plex Mono', monospace; font-size:9.5px;">
+              <span style="color:#22d3ee;">● Planned</span>
+              <span style="color:#f5a623;">● Actual</span>
+            </div>
+          </div>
+          <svg viewBox="0 0 480 220" style="width:100%; height:170px; display:block;">
+            <line x1="0" y1="0" x2="0" y2="220" stroke="rgba(255,255,255,0.06)"></line>
+            <line x1="0" y1="220" x2="480" y2="220" stroke="rgba(255,255,255,0.1)"></line>
+            <path d="{{ plannedPath }}" fill="none" stroke="#22d3ee" stroke-width="2.5"></path>
+            <path d="{{ actualPath }}" fill="none" stroke="#f5a623" stroke-width="2.5"></path>
+            <circle cx="{{ todayX }}" cy="{{ todayY }}" r="4.5" fill="#f5a623"></circle>
+            <line x1="{{ todayX }}" y1="0" x2="{{ todayX }}" y2="220" stroke="rgba(245,166,35,0.25)" stroke-dasharray="4,4"></line>
+          </svg>
+          <div style="font-family:'IBM Plex Mono', monospace; font-size:9.5px; color:#5b6672; margin-top:6px;">Today: month {{ todayMonth }} of 12 · SPI {{ activeSpi }}</div>
+        </div>
+
+        <!-- variance bars -->
+        <div style="background:#101722; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; break-inside:avoid;">
+          <div style="font-size:11.5px; font-weight:600; color:#eef2f7; margin-bottom:12px;">Cost variance by discipline</div>
+          <div style="display:flex; flex-direction:column; gap:9px;">
+            <sc-for list="{{ activeBars }}" as="bar" hint-placeholder-count="6">
+              <div>
+                <div style="display:flex; justify-content:space-between; font-size:9.5px; margin-bottom:3px;">
+                  <span style="color:#b7c0cc;">{{ bar.name }}</span>
+                  <span style="font-family:'IBM Plex Mono', monospace; color:{{ bar.color }};">{{ bar.display }}</span>
+                </div>
+                <div style="height:6px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden;">
+                  <div style="height:100%; width:{{ bar.width }}%; background:{{ bar.color }}; border-radius:3px;"></div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div style="margin-bottom:32px; break-inside:avoid;">
+      <h2 style="font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; margin:0 0 14px; break-after:avoid;">Skills</h2>
+      <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;">
+        <sc-for list="{{ skillGroups }}" as="grp" hint-placeholder-count="4">
+          <div>
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; color:#22d3ee; margin-bottom:8px;">{{ grp.title }}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:5px;">
+              <sc-for list="{{ grp.items }}" as="item" hint-placeholder-count="6">
+                <span style="font-size:10px; color:#b7c0cc; background:#101722; border:1px solid rgba(255,255,255,0.08); padding:4px 9px; border-radius:14px;">{{ item }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div style="margin-bottom:24px; break-inside:avoid;">
+      <h2 style="font-family:'Space Grotesk', sans-serif; font-size:18px; font-weight:600; margin:0 0 12px; break-after:avoid;">Education &amp; certification</h2>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <sc-for list="{{ education }}" as="ed" hint-placeholder-count="3">
+          <div style="display:flex; justify-content:space-between; gap:16px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.06); flex-wrap:wrap;">
+            <div style="font-size:11px; color:#eef2f7; font-weight:500;">{{ ed.title }}</div>
+            <div style="font-size:10.5px; color:#8b96a5;">{{ ed.org }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div style="text-align:center; font-size:10px; color:#3a4552;">Arabic (native) · English (professional working proficiency)</div>
+
+  </div>
+
+</x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+
+class Component extends DCLogic {
+  ROLES = [
+    { title: 'Lead Cost Control Engineer', dates: 'May 2025 – Present', company: 'AL-AYUNI Investment & Contracting Co. · Second Ring Road Project, Riyadh', dotColor: '#22d3ee',
+      bullets: [
+        'Lead cost control on a multi-hundred-million SAR highway programme across seven disciplines.',
+        "Designed and built the project's Power BI executive dashboard suite, including plan-vs-actual S-curves in DAX.",
+        'Deliver Chairman-level and Steering Committee reporting packs structured around status and decisions.',
+        'Own cash flow modelling, cost/revenue forecasting, and EAC and cost-to-complete analysis.',
+        'Act as Tender Manager and Estimator on package tenders (SSRR3 Landscape and Beautification).',
+      ] },
+    { title: 'Senior Cost Control Engineer', dates: 'Jan 2024 – Apr 2025', company: 'Saudi Binladin Group · Haram Expansion Project, Jeddah', dotColor: '#4f8cff',
+      bullets: [
+        'Rebuilt weekly and monthly reporting in Power BI, automating consolidation and removing manual assembly.',
+        'Monitored and enhanced the corporate Manpower Application, improving productivity-analysis data integrity.',
+        'Produced monthly productivity reporting benchmarking actual vs budgeted labour output by trade.',
+      ] },
+    { title: 'Senior Cost Control Engineer', dates: 'Nov 2022 – Dec 2023', company: 'Hassan Allam Holding · Marine and water infrastructure portfolio, Egypt', dotColor: '#4f8cff',
+      bullets: [
+        'Damietta Port Western Breakwater · Sherbeen WWTP (22,500 m³/day) · Maghagha–Minia Wastewater network.',
+        'Managed cost control across a multi-project portfolio spanning marine works, treatment plants and buried networks.',
+        'Issued original budgets and monthly cost reports; forecast cost/revenue trends, flagged margin erosion early.',
+      ] },
+    { title: 'Senior Cost Control Engineer', dates: 'Apr 2021 – Oct 2022', company: 'Orascom Construction Ltd · R5 District, New Administrative Capital, Egypt', dotColor: '#8b96a5',
+      bullets: [
+        "Owned budget preparation, estimating and forecasting for a flagship district of Egypt's New Capital.",
+        'Implemented detailed cost-code monitoring that protected project margin.',
+        'Negotiated change orders and modified rates with the Consultant; issued monthly invoices.',
+      ] },
+    { title: 'Cost Control Engineer', dates: 'Aug 2017 – Apr 2021', company: 'Orascom Construction Ltd · New Capital and Mansoura residential compounds, Egypt', dotColor: '#8b96a5',
+      bullets: [
+        'Delivered cost control across seven concurrent residential projects: budget control, actual cost, forecasting, monthly reporting.',
+      ] },
+    { title: 'Site Engineer & Project Coordinator', dates: 'Aug 2016 – Jul 2017', company: 'Cairo for Construction and Supplies, Egypt', dotColor: '#5b6672',
+      bullets: [
+        'Site execution, progress measurement and coordination.',
+      ] },
+  ];
+
+  DRILL = { label: 'Board', spi: '0.97',
+    planned: [4,12,22,34,47,58,68,77,85,91,96,100],
+    actual:  [3,10,19,29,40,50,60,69,77,84,90,95],
+    bars: [
+      { name: 'Highways & earthworks', pct: -6.2 },
+      { name: 'Structures & bridges', pct: -2.1 },
+      { name: 'Drainage & utilities', pct: 3.4 },
+      { name: 'Paving', pct: -1.0 },
+      { name: 'Landscape', pct: 5.8 },
+      { name: 'MEP', pct: -4.5 },
+    ] };
+
+  toPath(vals) {
+    const w = 480, h = 220, pad = 6;
+    return vals.map((v, i) => {
+      const x = (i / (vals.length - 1)) * w;
+      const y = h - pad - (v / 100) * (h - pad * 2);
+      return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
+    }).join(' ');
+  }
+
+  varColor(pct) { return pct < 0 ? '#f4674c' : '#34d399'; }
+
+  renderVals() {
+    const timeline = this.ROLES.map(r => ({
+      title: r.title, dates: r.dates, company: r.company, bullets: r.bullets, dotColor: r.dotColor,
+    }));
+
+    const drill = this.DRILL;
+    const maxBar = Math.max(...drill.bars.map(b => Math.abs(b.pct)), 8);
+    const activeBars = drill.bars.map(b => ({
+      name: b.name,
+      display: (b.pct > 0 ? '+' : '') + b.pct.toFixed(1) + '%',
+      width: Math.max(6, (Math.abs(b.pct) / maxBar) * 100),
+      color: this.varColor(b.pct),
+    }));
+
+    const todayIdx = 6;
+    const w = 480;
+    const todayX = (todayIdx / 11) * w;
+    const todayY = 220 - 6 - (drill.actual[todayIdx] / 100) * (220 - 12);
+
+    return {
+      timeline,
+      flowSteps: [
+        { tag: '01 · Sources', label: 'SAP · Oracle · BOQ · Progress · Manpower', color: '#8b96a5', hasArrow: true },
+        { tag: '02 · Model', label: 'Governed star-schema data model', color: '#4f8cff', hasArrow: true },
+        { tag: '03 · Engine', label: 'DAX EVM engine — PV, EV, AC, SPI, CPI, EAC', color: '#22d3ee', hasArrow: true },
+        { tag: '04 · Delivery', label: 'Board → Discipline → Cost-code dashboards', color: '#34d399', hasArrow: false },
+      ],
+      kpis: [
+        { label: 'SPI', value: '0.97', sub: 'Schedule performance', color: '#f5a623' },
+        { label: 'CPI', value: '1.05', sub: 'Cost performance', color: '#34d399' },
+        { label: 'EAC', value: '$482.6M', sub: 'Estimate at completion', color: '#eef2f7' },
+        { label: 'ETC', value: '$138.2M', sub: 'Estimate to complete', color: '#eef2f7' },
+        { label: 'TCPI', value: '1.08', sub: 'To-complete performance', color: '#f5a623' },
+        { label: '% Complete', value: '71%', sub: 'Physical progress', color: '#22d3ee' },
+      ],
+      activeSpi: drill.spi,
+      plannedPath: this.toPath(drill.planned),
+      actualPath: this.toPath(drill.actual),
+      todayX, todayY, todayMonth: todayIdx + 1,
+      activeBars,
+      skillGroups: [
+        { title: 'Project controls', items: ['EVM', 'Budgeting & baseline control', 'Cost forecasting & EAC', 'BOQ estimating & tendering', 'Cash flow & S-curves', 'Variations & claims', 'Productivity analysis', 'Monte Carlo risk'] },
+        { title: 'Power BI', items: ['Dashboard architecture', 'DAX & time intelligence', 'Power Query / ETL', 'Star-schema modelling', 'Automated daily refresh', 'Custom HTML/SVG visuals', 'Row-level security', 'Power BI Service'] },
+        { title: 'Sectors', items: ['Highways & ring roads', 'Bridges & structures', 'Marine & breakwaters', 'Water & wastewater', 'Pump stations & networks', 'Landscape packages', 'Large urban districts'] },
+        { title: 'Systems', items: ['Power BI', 'Oracle', 'SAP', 'Primavera P6', 'MS Project', 'Advanced Excel', 'SPSS'] },
+      ],
+      education: [
+        { title: 'MBA, Managerial Accounting', org: 'Arab Academy for Science, Technology & Maritime Transport' },
+        { title: 'B.Sc. Civil Engineering', org: 'Higher Institute of Engineering, El Shorouk Academy · 2016' },
+        { title: 'Construction Cost Estimating & Cost Control · Build Dashboards in Power BI · Data Analyst in Power BI', org: 'Columbia University / Coursera' },
+        { title: 'Financial Analysis for Startups · Profit Analysis using EVA', org: 'Yonsei University' },
+      ],
+    };
+  }
+}
+
+</script>
+<script>
+addEventListener('load', () => {
+  (async () => {
+    try { await document.fonts.ready; } catch (e) {}
+    const imgs = Array.from(document.images).filter((i) => !i.complete);
+    await Promise.race([
+      Promise.allSettled(imgs.map((i) => i.decode())),
+      new Promise((r) => setTimeout(r, 8000)),
+    ]);
+    setTimeout(() => window.print(), 500);
+  })();
+});
+</script>
+</body>
+</html>
